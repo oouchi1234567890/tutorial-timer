@@ -1,0 +1,126 @@
+/* ページ全体 */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  background: #1a1a2e;
+  color: #ffffff;
+  font-family: "Courier New", monospace;
+}
+
+/* タイマー全体 */
+.timer {
+  width: min(560px, 100%);
+  padding: 40px;
+  box-sizing: border-box;
+  text-align: center;
+  background: #79a8f4;
+  border: 2px solid #f5f7fa;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgb(0 0 0 / 35%);
+}
+
+/* 残り時間 */
+.timer-display {
+  margin-bottom: 32px;
+  color: #4550e9;
+  font-size: clamp(56px, 15vw, 100px);
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 4px;
+  text-shadow: 0 0 18px rgba(69, 228, 233, 0.45);
+}
+
+/* スタート・ストップ */
+.timer-control {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* 時間選択 */
+.timer-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+button {
+  min-height: 48px;
+  padding: 10px 16px;
+  color: #1c1b1b;
+  font: inherit;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #e8e9e9;
+  border: 0;
+  border-radius: 8px;
+  transition:
+    background-color 0.2s,
+    transform 0.1s,
+    opacity 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background: #18558f;
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+button:focus-visible {
+  outline: 3px solid #f5c542;
+  outline-offset: 3px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.start {
+  background: #16855b;
+}
+
+.start:hover:not(:disabled) {
+  background: #20a873;
+}
+
+.stop {
+  background: #b7374c;
+}
+
+.stop:hover:not(:disabled) {
+  background: #d94b63;
+}
+
+.reset {
+  grid-column: 1 / -1;
+  background: #6c43cd;
+}
+
+.reset:hover:not(:disabled) {
+  background: #8661bd;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 20px 12px;
+  }
+
+  .timer {
+    padding: 28px 18px;
+  }
+
+  .timer-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
